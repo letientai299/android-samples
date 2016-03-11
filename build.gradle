@@ -1,0 +1,31 @@
+buildscript {
+  repositories {
+    jcenter {
+      url = "http://jcenter.bintray.com"
+    }
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:2.1.0-alpha1'
+
+    // Using java 8 syntax on Android source code
+    classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+    // Also replace the Android build-in lombok with this new one, to
+    // help lint won't not fail on Lambda Expression.
+    classpath 'me.tatarka.retrolambda.projectlombok:lombok.ast:0.2.3.a2'
+  }
+
+  // Exclude the version that the android plugin depends on. We've added a new one.
+  configurations.classpath.exclude group: 'com.android.tools.external.lombok'
+}
+
+allprojects {
+  repositories {
+    jcenter {
+      url = "http://jcenter.bintray.com"
+    }
+  }
+}
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}
