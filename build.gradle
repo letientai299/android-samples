@@ -1,3 +1,5 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
 buildscript {
   repositories {
     jcenter {
@@ -5,7 +7,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.1.0-alpha1'
+    classpath 'com.android.tools.build:gradle:2.0.0-beta6'
 
     // Using java 8 syntax on Android source code
     classpath 'me.tatarka:gradle-retrolambda:3.2.5'
@@ -17,6 +19,7 @@ buildscript {
   // Exclude the version that the android plugin depends on. We've added a new one.
   configurations.classpath.exclude group: 'com.android.tools.external.lombok'
 }
+
 
 allprojects {
   repositories {
